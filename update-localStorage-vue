@@ -1,4 +1,4 @@
-// Функция эвента-наблюдателя, используем где необходимо и где происходят изменения в localStorage
+// Функция эвента-наблюдателя, используем где необходимо и где происходят изменения в localStorage (stroykomplect)
 
   updateStorage: function () {
       window.dispatchEvent(new CustomEvent('localstorage-changed', {
