@@ -1,0 +1,24 @@
+// Функция эвента-наблюдателя, используем где необходимо и где происходят изменения в localStorage
+
+  updateStorage: function () {
+      window.dispatchEvent(new CustomEvent('localstorage-changed', {
+          detail: {
+             storage: document.slStorage.get('slCart',this.products)
+          }
+     }));
+  },
+  
+  
+  
+  
+// Колбэк эвента, где необходимо отследить localStorage
+
+  mounted() {
+  
+     this.products=document.slStorage.get('slCart',this.products);
+
+     window.addEventListener('localstorage-changed', (event) => {
+          this.products = event.detail.storage;
+     });
+
+  },
