@@ -1,5 +1,8 @@
  
- // JS 
+// Helper
+$doc->addScript("https://www.google.com/recaptcha/api.js?render=Ключ сайта");
+
+// Script 
  function resetCapcha() {
 
         grecaptcha.execute('Ключ сайта', { action: 'contact' }).then(function (token) {
