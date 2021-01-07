@@ -10,6 +10,12 @@ $doc->addScript("https://www.google.com/recaptcha/api.js?render=Ключ сай�
         });
 
  }
+
+ grecaptcha.ready(function () {
+        grecaptcha.execute('6LeQDyQaAAAAAKhuMRRP0PEAYq7-sIrYLAqfam-9', { action: 'contact' }).then(function (token) {
+            document.querySelectorAll(".recaptchaResponseMulti").forEach(elem => (elem.value = token));
+        });
+ });
  
  // HTML
  <input type="hidden" name="recaptcha_response" id="recaptchaResponse" class="recaptchaResponseMulti" value="">
